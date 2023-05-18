@@ -24,6 +24,7 @@ function getDrink() {
             console.log(data.drinks);//array with objects
             let arrDrinks = data.drinks;
             //Insert the content for drink in index 0
+            removeIngredients()
             insertContent()
             //Button next interactions
             document.querySelector('.btn-next').addEventListener('click', nextCocktail)
