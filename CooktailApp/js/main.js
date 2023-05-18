@@ -4,8 +4,8 @@ document.querySelector('button').addEventListener('click', getDrink)
 
 function getDrink() {
     //Show the arrows 
-    document.querySelector('.btn-next').classList.add('hidden')
-    document.querySelector('.btn-prev').classList.add('hidden')
+    document.querySelector('.btn-next').classList.remove('hidden')
+    document.querySelector('.btn-prev').classList.remove('hidden')
     //Get the drink inserted in ther input
     let drinks = document.querySelector('input').value.toLowerCase();
     const url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drinks}`;
