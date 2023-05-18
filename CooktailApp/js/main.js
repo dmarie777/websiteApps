@@ -19,7 +19,6 @@ function getDrink() {
     fetch (url) 
         .then(res => res.json())
         .then(data => {
-            console.log(`Initial count: ${count}`);
                 //console.log(data);//object
             console.log(data.drinks);//array with objects
             let arrDrinks = data.drinks;
@@ -33,6 +32,8 @@ function getDrink() {
                 showFinalMessage(arrDrinks.length)
                 removeIngredients()
                 insertContent()
+                console.log(`count: ${count}`);
+
                 
             }
             document.querySelector('.btn-prev').addEventListener('click', prevCocktail)
@@ -41,23 +42,22 @@ function getDrink() {
                 showFinalMessage(-1)
                 removeIngredients()
                 insertContent()
+                console.log(`count: ${count}`);
+
             }
             
             ///function for writting 
             function insertContent() {
                 if (count<0) {
                     count =arrDrinks.length-1
-                    console.log(`count3: ${count}`);
                 } else if (count>=arrDrinks.length) {
                     count =0
-                    console.log(`count3: ${count}`);
                 } else {  
                     ///this code overwrites the existing data for img and h2 each iteration///
                     document.querySelector("img").src = arrDrinks[count].strDrinkThumb
                     document.querySelector('h2').innerText = arrDrinks[count].strDrink
                     getIngredients(count)
                     getInstructions(count)
-                    console.log(`count: ${count}`);
                 }
             }
             ///code for removing every li that has been created in the previous iteration!!! USED IN INGREDIENTS///
@@ -70,7 +70,6 @@ function getDrink() {
             //this function runs when the loop reaches the end!!!
             function showFinalMessage(step) {
                 if (count ===step) {
-                    console.log(`count2: ${count},length: ${arrDrinks.length}`);
                     p.innerText = 'click again to start all over!!! ';
                     document.querySelector("img").src=''
                     document.querySelector('h2').innerText = ''
@@ -96,7 +95,6 @@ function getDrink() {
                     h3.innerText = 'Ingredients'
                     const li = document.createElement('li')
                     li.innerText = arrDrinks[drinkIndex][arrIngNum[j]]
-                    console.log(arrDrinks[drinkIndex][arrIngNum[j]]);
                     ul.appendChild(li)
                     }
                 } 

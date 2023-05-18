@@ -8,6 +8,10 @@
     margin: 0;
     padding: 0;
   }
+
+  :root {
+    --main-color: rgb(213, 222, 176);
+  }
   
   /******************************************
   /* LAYOUT
@@ -29,18 +33,22 @@
   /* ADDITIONAL STYLES
   /*******************************************/
   body {
-    background: linear-gradient(rgb(7, 22, 36), rgb(68, 125, 137));
+    background: linear-gradient(rgb(29, 5, 5), rgb(137, 101, 68));
     padding: 5px 30px;
     color: white;
     min-height: 100vh;
+    font-family: 'Kalam', cursive;
   }
 
   input {
     background: grey;
     border-radius: 20px;
+    
   }
   .button {
     background: linear-gradient(rgba(13, 47, 65, 0.5),rgba(35, 16, 16, 0.4));
+    font-family: 'Abel', sans-serif;
+
   }
   input, .button {
     padding: 0 15px;
@@ -51,6 +59,7 @@
   .content {
     margin-top: 5%;
     margin-left: 5%;
+    font-family: 'Abel', sans-serif;
   }
   h1 {
     margin-top: 5%;
@@ -59,6 +68,10 @@
   h2, h3 {
     padding: 0 0 15px 0;
   } 
+  h2,h3 {
+    font-family: 'Kalam', cursive;
+
+  }
 
 
   /* buttons */
@@ -68,6 +81,11 @@
     font-size: 3.5rem;
     background: none;
     border: none;
+    border-radius: 50%;
+    box-shadow: 5px 10px 20px  black;
+  }
+  .btn:hover {
+    color: rgb(10, 24, 66);
   }
   .btn-next {
     top: 30px;
@@ -79,9 +97,10 @@
   }
 
 
+
   /* col-3 */
-  h3 {
-    color: rgb(70, 177, 152);
+  h2,h3 {
+    color: var(--main-color);
   }
   ul {
     text-align: left;
