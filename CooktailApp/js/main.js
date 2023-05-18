@@ -33,10 +33,10 @@ function getDrink() {
             document.querySelector('.btn-next').addEventListener('click', nextCocktail)
             function nextCocktail () {
                 //this codes runs when the loop reaches the end!!!
-                showFinalMessage()
+                showFinalMessage(arrDrinks.length)
                 removeIngredients()
                  //this part of the code makes the counter re start and the drinks starts again!
-                if (count>=arrDrinks.length) {
+                 if (count>=arrDrinks.length) {
                     count =0
                     console.log(`count3: ${count}`);
                 } else {  
@@ -46,16 +46,16 @@ function getDrink() {
                     getIngredients(count)
                     getInstructions(count)
                     count ++;
-                    console.log(`count4: ${count}`);
+                    console.log(`counting after Adding: ${count}`);
                 }
             }
             document.querySelector('.btn-prev').addEventListener('click', prevCocktail)
             function prevCocktail () {
-                showFinalMessage()
+                showFinalMessage(-1)
                 removeIngredients()
                  //this part of the code makes the counter re start and the drinks starts again!
-                if (count<arrDrinks.length && count<0) {
-                    count =0
+                if (count<0) {
+                    count =arrDrinks.length-1
                     console.log(`count3: ${count}`);
                 } else {  
                     ///this code overwrites the existing data for img and h2 each iteration///
@@ -64,7 +64,7 @@ function getDrink() {
                     getIngredients(count)
                     getInstructions(count)
                     count --;
-                    console.log(`count4: ${count}`);
+                    console.log(`countAfterSubstracting: ${count}`);
                 }
             }
             
@@ -77,8 +77,8 @@ function getDrink() {
                 }
             }
             //this function runs when the loop reaches the end!!!
-            function showFinalMessage() {
-                if (count ===arrDrinks.length) {
+            function showFinalMessage(step) {
+                if (count ===step) {
                     console.log(`count2: ${count},length: ${arrDrinks.length}`);
                     p.innerText = 'click again to start all over!!! ';
                     document.querySelector("img").src=''
