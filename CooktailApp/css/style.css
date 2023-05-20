@@ -21,6 +21,7 @@
     margin: 0 auto;
     max-height: 250px;
     max-width: 200px;
+    border-radius: 50%;
   }
 
   .content {
@@ -33,7 +34,7 @@
   /* ADDITIONAL STYLES
   /*******************************************/
   body {
-    background: linear-gradient(rgb(29, 5, 5), rgb(137, 101, 68));
+    background: radial-gradient(rgb(70 9 9), rgb(27 7 7));
     padding: 5px 30px;
     color: white;
     min-height: 100vh;
@@ -41,12 +42,12 @@
   }
 
   input {
-    background: grey;
+    background: #420f0f;
     border-radius: 20px;
     
   }
   .button {
-    background: linear-gradient(rgba(13, 47, 65, 0.5),rgba(35, 16, 16, 0.4));
+    background: linear-gradient(rgb(27 41 48 / 26%),rgb(5 2 2 / 40%));
     font-family: 'Abel', sans-serif;
 
   }
@@ -59,7 +60,11 @@
   .content {
     margin-top: 5%;
     margin-left: 5%;
+    margin-right: 10%;
     font-family: 'Abel', sans-serif;
+    background: rgba(245, 245, 245, 0.211);
+    border-radius: 25px;
+    padding: 5px;
   }
   h1 {
     margin-top: 5%;
@@ -85,11 +90,11 @@
     box-shadow: 5px 10px 20px  black;
   }
   .btn:hover {
-    color: rgb(10, 24, 66);
+    color: rgb(203, 203, 22);
   }
   .btn-next {
     top: 30px;
-    right: 70px;
+    right: -60px;
   }
   button.btn-prev {
     top: 30px;
