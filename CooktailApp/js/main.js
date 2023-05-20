@@ -1,6 +1,8 @@
 //The user will enter a cocktail. Get a cocktail name, photo, and instructions and place them in the DOM
-
 document.querySelector('button').addEventListener('click', getDrink)
+const ul = document.querySelector('ul')
+const p = document.querySelector('p');
+const h3 = document.querySelector('h3');
 
 function getDrink() {
     //Show the arrows 
@@ -10,11 +12,7 @@ function getDrink() {
     let drinks = document.querySelector('input').value.toLowerCase();
     const url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drinks}`;
     console.log(url);
-    let count = 0;
-        ///we need to use https to get working, else it doesn't
-    const ul = document.querySelector('ul')
-    const p = document.querySelector('p');
-    const h3 = document.querySelector('h3');
+
     //extract the data using the url for the drink
     fetch (url) 
         .then(res => res.json())
@@ -23,27 +21,33 @@ function getDrink() {
             console.log(data.drinks);//array with objects
             let arrDrinks = data.drinks;
             //Insert the content for drink in index 0
-            removeIngredients()
+            let count = 0;
+            removePreviousIngredients()
             insertContent()
             //Button next interactions
             document.querySelector('.btn-next').addEventListener('click', nextCocktail)
+
             function nextCocktail () {
                 count ++;
-                showFinalMessage(arrDrinks.length)
-                removeIngredients()
+                if (count ===arrDrinks.length) {
+                    showFinalMessage();
+                }
+                removePreviousIngredients()
                 insertContent()
-                console.log(`count: ${count}`);
 
-                
+                console.log(`count: ${count}`);
             }
             document.querySelector('.btn-prev').addEventListener('click', prevCocktail)
+
             function prevCocktail () {
                 count --;
-                showFinalMessage(-1)
-                removeIngredients()
+                if (count ===-1) {
+                    showFinalMessage();
+                }
+                removePreviousIngredients()
                 insertContent()
-                console.log(`count: ${count}`);
 
+                console.log(`count: ${count}`);
             }
             
             ///function for writting 
@@ -51,29 +55,13 @@ function getDrink() {
                 if (count<0) {
                     count =arrDrinks.length-1
                 } else if (count>=arrDrinks.length) {
-                    count =0
+                    count =0;
                 } else {  
                     ///this code overwrites the existing data for img and h2 each iteration///
                     document.querySelector("img").src = arrDrinks[count].strDrinkThumb
                     document.querySelector('h2').innerText = arrDrinks[count].strDrink
                     getIngredients(count)
                     getInstructions(count)
-                }
-            }
-            ///code for removing every li that has been created in the previous iteration!!! USED IN INGREDIENTS///
-            function removeIngredients() {
-                const liArr = document.querySelectorAll('li') //this is an array
-                if (liArr.length>0) {
-                    liArr.forEach(li => li.remove())
-                }
-            }
-            //this function runs when the loop reaches the end!!!
-            function showFinalMessage(step) {
-                if (count ===step) {
-                    p.innerText = 'click again to start all over!!! ';
-                    document.querySelector("img").src=''
-                    document.querySelector('h2').innerText = ''
-                    h3.innerText = ''
                 }
             }
 
@@ -85,7 +73,7 @@ function getDrink() {
                 //code to get an array with the name property of ingredients///
                 let arrIngNum=[];
                 for (let i=1; i<=15; i++) {
-                        arrIngNum.push(`strIngredient${i}`)
+                    arrIngNum.push(`strIngredient${i}`)
                 }
                 console.log(`dirnkIndex: ${drinkIndex}`);
                 console.log(arrDrinks[drinkIndex]);
@@ -104,3 +92,18 @@ function getDrink() {
 }
 
 
+ ///code for removing every li that has been created in the previous iteration!!! USED IN INGREDIENTS///
+function removePreviousIngredients() {
+    const liArr = document.querySelectorAll('li') //this is an array
+    if (liArr.length>0) {
+        liArr.forEach(li => li.remove())
+    }
+}
+
+ //this function runs when the loop reaches the end!!!
+  function showFinalMessage() {
+    p.innerText = 'click again to start all over!!! ';
+    document.querySelector("img").src=''
+    document.querySelector('h2').innerText = ''
+    h3.innerText = ''
+}
