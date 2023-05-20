@@ -5,9 +5,7 @@ const p = document.querySelector('p');
 const h3 = document.querySelector('h3');
 
 function getDrink() {
-    //Show the arrows 
-    document.querySelector('.btn-next').classList.remove('hidden')
-    document.querySelector('.btn-prev').classList.remove('hidden')
+
     //Get the drink inserted in ther input
     let drinks = document.querySelector('input').value.toLowerCase();
     const url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drinks}`;
@@ -17,16 +15,22 @@ function getDrink() {
     fetch (url) 
         .then(res => res.json())
         .then(data => {
-                //console.log(data);//object
             console.log(data.drinks);//array with objects
             let arrDrinks = data.drinks;
             //Insert the content for drink in index 0
             let count = 0;
             removePreviousIngredients()
             insertContent()
-            //Button next interactions
-            document.querySelector('.btn-next').addEventListener('click', nextCocktail)
-
+            if (arrDrinks.length>1) {
+                //Show the arrows 
+                document.querySelector('.btn-next').classList.remove('hidden')
+                document.querySelector('.btn-prev').classList.remove('hidden')
+                 //Button-next interaction
+                document.querySelector('.btn-next').addEventListener('click', nextCocktail)
+                //Button-previous interaction
+                document.querySelector('.btn-prev').addEventListener('click', prevCocktail)
+            }
+           
             function nextCocktail () {
                 count ++;
                 if (count ===arrDrinks.length) {
@@ -34,11 +38,8 @@ function getDrink() {
                 }
                 removePreviousIngredients()
                 insertContent()
-
                 console.log(`count: ${count}`);
             }
-            document.querySelector('.btn-prev').addEventListener('click', prevCocktail)
-
             function prevCocktail () {
                 count --;
                 if (count ===-1) {
@@ -46,26 +47,23 @@ function getDrink() {
                 }
                 removePreviousIngredients()
                 insertContent()
-
                 console.log(`count: ${count}`);
             }
-            
-            ///function for writting 
+            ///function to insert content content 
             function insertContent() {
                 if (count<0) {
                     count =arrDrinks.length-1
                 } else if (count>=arrDrinks.length) {
                     count =0;
                 } else {  
-                    ///this code overwrites the existing data for img and h2 each iteration///
+                    //get image
                     document.querySelector("img").src = arrDrinks[count].strDrinkThumb
+                    //get name
                     document.querySelector('h2').innerText = arrDrinks[count].strDrink
                     getIngredients(count)
                     getInstructions(count)
                 }
             }
-
-            ///this code overwrites the existing data for the paragraph with the instructions in each iteration///
             function getInstructions(drinkIndex) {
                 p.innerText = arrDrinks[drinkIndex].strInstructions;
             }
@@ -75,8 +73,6 @@ function getDrink() {
                 for (let i=1; i<=15; i++) {
                     arrIngNum.push(`strIngredient${i}`)
                 }
-                console.log(`dirnkIndex: ${drinkIndex}`);
-                console.log(arrDrinks[drinkIndex]);
                 for (let j=0; j<arrIngNum.length; j++) {
                     let ingredient = arrDrinks[drinkIndex][arrIngNum[j]]
                     if (ingredient !== null) {
@@ -91,18 +87,16 @@ function getDrink() {
         })
 }
 
-
- ///code for removing every li that has been created in the previous iteration!!! USED IN INGREDIENTS///
+ ///code for removing every li that has been created in the previous interation
 function removePreviousIngredients() {
     const liArr = document.querySelectorAll('li') //this is an array
     if (liArr.length>0) {
         liArr.forEach(li => li.remove())
     }
 }
-
- //this function runs when the loop reaches the end!!!
-  function showFinalMessage() {
-    p.innerText = 'click again to start all over!!! ';
+ //this function runs when the loop reaches the end
+function showFinalMessage() {
+    p.innerText = 'click again to start all over!';
     document.querySelector("img").src=''
     document.querySelector('h2').innerText = ''
     h3.innerText = ''
