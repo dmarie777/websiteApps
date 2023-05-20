@@ -3,7 +3,8 @@ document.querySelector('button').addEventListener('click', getDrink)
 const ul = document.querySelector('ul')
 const p = document.querySelector('p');
 const h3 = document.querySelector('h3');
-
+const content = document.querySelector('.content')
+content.classList.remove('content-background')
 function getDrink() {
 
     //Get the drink inserted in ther input
@@ -21,6 +22,8 @@ function getDrink() {
             let count = 0;
             removePreviousIngredients()
             insertContent()
+            content.classList.add('content-background')
+
             if (arrDrinks.length>1) {
                 //Show the arrows 
                 document.querySelector('.btn-next').classList.remove('hidden')
@@ -38,6 +41,8 @@ function getDrink() {
                 }
                 removePreviousIngredients()
                 insertContent()
+                content.classList.add('content-background')
+
                 console.log(`count: ${count}`);
             }
             function prevCocktail () {
@@ -47,6 +52,8 @@ function getDrink() {
                 }
                 removePreviousIngredients()
                 insertContent()
+                content.classList.add('content-background')
+
                 console.log(`count: ${count}`);
             }
             ///function to insert content content 
@@ -100,4 +107,6 @@ function showFinalMessage() {
     document.querySelector("img").src=''
     document.querySelector('h2').innerText = ''
     h3.innerText = ''
+    content.classList.remove('content-background')
+
 }

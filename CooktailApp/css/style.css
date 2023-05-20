@@ -62,9 +62,11 @@
     margin-left: 5%;
     margin-right: 10%;
     font-family: 'Abel', sans-serif;
-    background: rgba(245, 245, 245, 0.211);
     border-radius: 25px;
     padding: 5px;
+  }
+  .content-background {
+    background: rgba(245, 245, 245, 0.211);
   }
   h1 {
     margin-top: 5%;
