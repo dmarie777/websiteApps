@@ -1,5 +1,5 @@
 //The user will enter a cocktail. Get a cocktail name, photo, and instructions and place them in the DOM
-//Add local Storage
+//Add local Storage - Run function with localStorage
 getDrink()
 ///////////////////
 document.querySelector('button').addEventListener('click', getDrink)
@@ -12,9 +12,12 @@ content.classList.remove('content-background')
 function getDrink() {
     //Get the drink inserted in ther input
     let drinks = document.querySelector('input').value.toLowerCase();
+    //set localStorage
     if (drinks !== '') {
         localStorage.setItem('drink',drinks)
     }
+    ///Add input value from local Storage
+    document.querySelector('input').value = localStorage.getItem('drink',drinks)
 
     const url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${localStorage.getItem('drink',drinks)}`;
     console.log(url);
