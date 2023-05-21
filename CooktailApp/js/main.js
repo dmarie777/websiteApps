@@ -5,8 +5,8 @@ const p = document.querySelector('p');
 const h3 = document.querySelector('h3');
 const content = document.querySelector('.content')
 content.classList.remove('content-background')
-function getDrink() {
 
+function getDrink() {
     //Get the drink inserted in ther input
     let drinks = document.querySelector('input').value.toLowerCase();
     const url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drinks}`;
@@ -18,11 +18,10 @@ function getDrink() {
         .then(data => {
             console.log(data.drinks);//array with objects
             let arrDrinks = data.drinks;
-            //Insert the content for drink in index 0
+            content.classList.add('content-background')
             let count = 0;
             removePreviousIngredients()
             insertContent()
-            content.classList.add('content-background')
 
             if (arrDrinks.length>1) {
                 //Show the arrows 
@@ -33,27 +32,28 @@ function getDrink() {
                 //Button-previous interaction
                 document.querySelector('.btn-prev').addEventListener('click', prevCocktail)
             }
-           
+
             function nextCocktail () {
+                content.classList.add('content-background')
                 count ++;
                 if (count ===arrDrinks.length) {
+                    content.classList.remove('content-background')
                     showFinalMessage();
                 }
                 removePreviousIngredients()
                 insertContent()
-                content.classList.add('content-background')
 
                 console.log(`count: ${count}`);
             }
             function prevCocktail () {
+                content.classList.add('content-background')
                 count --;
                 if (count ===-1) {
+                    content.classList.remove('content-background')
                     showFinalMessage();
                 }
                 removePreviousIngredients()
                 insertContent()
-                content.classList.add('content-background')
-
                 console.log(`count: ${count}`);
             }
             ///function to insert content content 
@@ -107,6 +107,5 @@ function showFinalMessage() {
     document.querySelector("img").src=''
     document.querySelector('h2').innerText = ''
     h3.innerText = ''
-    content.classList.remove('content-background')
-
+    
 }
