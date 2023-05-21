@@ -49,7 +49,8 @@
   .button {
     background: linear-gradient(rgb(27 41 48 / 26%),rgb(5 2 2 / 40%));
     font-family: 'Abel', sans-serif;
-
+    border-top: 2px solid rgb(244, 255, 27);
+    border-left: 2px solid rgb(226, 135, 25);
   }
   input, .button {
     padding: 0 15px;
