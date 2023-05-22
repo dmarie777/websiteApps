@@ -1,7 +1,8 @@
 //The user will enter a cocktail. Get a cocktail name, photo, and instructions and place them in the DOM
-//Add local Storage - Run function with localStorage
+//Run function with localStorage
 getDrink()
 ///////////////////
+//Run function with addEventListener
 document.querySelector('button').addEventListener('click', getDrink)
 const ul = document.querySelector('ul')
 const p = document.querySelector('p');

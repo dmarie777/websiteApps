@@ -52,6 +52,12 @@
     border-top: 2px solid rgb(244, 255, 27);
     border-left: 2px solid rgb(226, 135, 25);
   }
+
+  .button:hover {
+    background: linear-gradient(rgb(208 218 54 / 45%),rgb(243 113 8 / 69%));
+    box-shadow: 5px 10px 10px rgb(211, 211, 126);
+  }
+
   input, .button {
     padding: 0 15px;
     height: 2rem;
@@ -80,7 +86,9 @@
     font-family: 'Kalam', cursive;
 
   }
-
+  p, li {
+    padding-left: 20px;
+  }
 
   /* buttons */
   .btn {
@@ -95,6 +103,10 @@
   .btn:hover {
     color: rgb(203, 203, 22);
   }
+  .btn-prev:hover {
+    color: rgb(226, 135, 25);
+  }
+
   .btn-next {
     top: 30px;
     right: -60px;
@@ -121,3 +133,11 @@
     display: none;
   }
   
+
+  /* media queries */
+@media screen and (max-width: 700px) {
+
+  .content {
+    grid-template-columns: 100%;
+  }
+}
