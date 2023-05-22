@@ -44,8 +44,13 @@
   input {
     background: #420f0f;
     border-radius: 20px;
-    
   }
+
+  input[type='text'] {
+    font-family: 'Kalam', cursive;
+    color: #c8c7c7;
+  }
+
   .button {
     background: linear-gradient(rgb(27 41 48 / 26%),rgb(5 2 2 / 40%));
     font-family: 'Abel', sans-serif;
