@@ -55,7 +55,7 @@
 
   .button:hover {
     background: linear-gradient(rgb(208 218 54 / 45%),rgb(243 113 8 / 69%));
-    box-shadow: 5px 10px 10px rgb(211, 211, 126);
+    box-shadow: -2px -2px 2px rgb(211, 211, 126);
   }
 
   input, .button {
@@ -70,7 +70,7 @@
     margin-right: 10%;
     font-family: 'Abel', sans-serif;
     border-radius: 25px;
-    padding: 5px;
+    padding: 15px;
   }
   .content-background {
     background: rgba(245, 245, 245, 0.211);
@@ -109,11 +109,11 @@
 
   .btn-next {
     top: 30px;
-    right: -60px;
+    right: -55px;
   }
   button.btn-prev {
     top: 30px;
-    left: -70px;
+    left: -55px;
   }
 
 
