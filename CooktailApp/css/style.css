@@ -97,22 +97,24 @@
     font-size: 3.5rem;
     background: none;
     border: none;
-    border-radius: 50%;
     box-shadow: 5px 10px 20px  black;
+    height: 5px;
+    border-radius: 10px;
   }
   .btn:hover {
     color: rgb(203, 203, 22);
+    background:linear-gradient(rgba(207, 218, 54, 0.221),rgb(243 113 8 / 69%));
   }
   .btn-prev:hover {
     color: rgb(226, 135, 25);
   }
 
   .btn-next {
-    top: 30px;
+    top: 0px;
     right: -55px;
   }
   button.btn-prev {
-    top: 30px;
+    top: 0px;
     left: -55px;
   }
 
