@@ -51,17 +51,28 @@
     color: #c8c7c7;
   }
 
-  .button {
+  .random-btn {
+    background: linear-gradient(rgb(27 41 48 / 26%),rgb(5 2 2 / 40%));
+    font-family: 'Abel', sans-serif;
+    border-top: 2px solid rgb(27, 198, 255);
+    border-left: 2px solid rgb(63 90 184);
+  }
+
+  .get-cocktail-btn {
     background: linear-gradient(rgb(27 41 48 / 26%),rgb(5 2 2 / 40%));
     font-family: 'Abel', sans-serif;
     border-top: 2px solid rgb(244, 255, 27);
     border-left: 2px solid rgb(226, 135, 25);
   }
 
-  .button:hover {
+  .get-cocktail-btn:hover {
     background: linear-gradient(rgb(208 218 54 / 45%),rgb(243 113 8 / 69%));
     box-shadow: -2px -2px 2px rgb(211, 211, 126);
   }
+  .random-btn:hover {
+    background: linear-gradient(rgb(54 164 218 / 45%),rgb(8 60 243 / 69%));
+    box-shadow: -2px -2px 2px rgb(25 145 190);
+  } 
 
   input, .button {
     padding: 0 15px;
@@ -80,6 +91,10 @@
   .content-background {
     background: rgba(245, 245, 245, 0.211);
   }
+  .random-background {
+    background:rgb(16 90 158 / 21%)
+  }
+
   h1 {
     margin-top: 5%;
   }

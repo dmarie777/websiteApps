@@ -8,13 +8,13 @@ const p = document.querySelector('p');
 const h3 = document.querySelector('h3');
 const content = document.querySelector('.content')
 content.classList.remove('content-background')
-
 document.querySelector('button').addEventListener('click', getDrink)
 document.querySelector('.random-btn').addEventListener('click', getRandomDrink)
 
 
 function getDrink() {
     //Get the drink inserted in ther input
+
     let drinks = document.querySelector('input').value.toLowerCase();
     //set localStorage
     if (drinks !== '') {
@@ -25,6 +25,7 @@ function getDrink() {
     const url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${localStorage.getItem('drink',drinks)}`;
     console.log(url);
     //extract the data using the url for the drink
+
     fetchUrl(url)
 }
 
@@ -35,6 +36,8 @@ function getRandomDrink() {
         fetchUrl(url)
         document.querySelector('.btn-next').classList.add('hidden')
         document.querySelector('.btn-prev').classList.add('hidden')
+        content.classList.add('random-background')
+
 }
 
 
@@ -45,6 +48,7 @@ function fetchUrl(url) {
         .then(data => {
             console.log(data.drinks);//array with objects
             let arrDrinks = data.drinks;
+
             content.classList.add('content-background')
             let count = 0;
             removePreviousIngredients()
