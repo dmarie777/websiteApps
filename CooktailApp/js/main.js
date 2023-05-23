@@ -4,6 +4,7 @@ getDrink()
 ///////////////////
 //Run function with addEventListener
 document.querySelector('button').addEventListener('click', getDrink)
+document.querySelector('.random-btn').addEventListener('click', getRandomDrink)
 const ul = document.querySelector('ul')
 const p = document.querySelector('p');
 const h3 = document.querySelector('h3');
@@ -19,11 +20,22 @@ function getDrink() {
     }
     ///Add input value from local Storage
     document.querySelector('input').value = localStorage.getItem('drink',drinks)
-
     const url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${localStorage.getItem('drink',drinks)}`;
     console.log(url);
-
     //extract the data using the url for the drink
+    fetchUrl(url)
+}
+
+function getRandomDrink() {
+        const url = `https://www.thecocktaildb.com/api/json/v1/1/random.php`;
+        console.log(url);
+        //extract the data using the url for the drink
+        fetchUrl(url)
+}
+
+
+
+function fetchUrl(url) {
     fetch (url) 
         .then(res => res.json())
         .then(data => {
@@ -104,7 +116,6 @@ function getDrink() {
 
         })
 }
-
  ///code for removing every li that has been created in the previous interation
 function removePreviousIngredients() {
     const liArr = document.querySelectorAll('li') //this is an array
