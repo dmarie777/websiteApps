@@ -3,13 +3,15 @@
 getDrink()
 ///////////////////
 //Run function with addEventListener
-document.querySelector('button').addEventListener('click', getDrink)
-document.querySelector('.random-btn').addEventListener('click', getRandomDrink)
 const ul = document.querySelector('ul')
 const p = document.querySelector('p');
 const h3 = document.querySelector('h3');
 const content = document.querySelector('.content')
 content.classList.remove('content-background')
+
+document.querySelector('button').addEventListener('click', getDrink)
+document.querySelector('.random-btn').addEventListener('click', getRandomDrink)
+
 
 function getDrink() {
     //Get the drink inserted in ther input
@@ -31,6 +33,8 @@ function getRandomDrink() {
         console.log(url);
         //extract the data using the url for the drink
         fetchUrl(url)
+        document.querySelector('.btn-next').classList.add('hidden')
+        document.querySelector('.btn-prev').classList.add('hidden')
 }
 
 
