@@ -3,6 +3,7 @@
 getDrink()
 ///////////////////
 //Run function with addEventListener
+const body = document.querySelector('body')
 const ul = document.querySelector('ul')
 const p = document.querySelector('p');
 const h3 = document.querySelector('h3');
@@ -27,6 +28,7 @@ function getDrink() {
     //extract the data using the url for the drink
 
     fetchUrl(url)
+    
 }
 
 function getRandomDrink() {
@@ -36,7 +38,6 @@ function getRandomDrink() {
         fetchUrl(url)
         document.querySelector('.btn-next').classList.add('hidden')
         document.querySelector('.btn-prev').classList.add('hidden')
-        content.classList.add('random-background')
 
 }
 

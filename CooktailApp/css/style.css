@@ -34,7 +34,8 @@
   /* ADDITIONAL STYLES
   /*******************************************/
   body {
-    background: radial-gradient(rgb(70 9 9), rgb(27 7 7));
+    background:rgba(2, 9, 15, 1);
+    /* background: radial-gradient(rgb(70 9 9), rgb(27 7 7)); */
     padding: 5px 30px;
     color: white;
     min-height: 100vh;
@@ -42,7 +43,7 @@
   }
 
   input {
-    background: #420f0f;
+    background: #3a3c44c9;
     border-radius: 20px;
   }
 
@@ -90,9 +91,6 @@
   }
   .content-background {
     background: rgba(245, 245, 245, 0.211);
-  }
-  .random-background {
-    background:rgb(16 90 158 / 21%)
   }
 
   h1 {
