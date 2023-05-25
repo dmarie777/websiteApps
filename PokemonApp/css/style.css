@@ -3,73 +3,111 @@
     margin: 0;
     box-sizing: border-box;
 }
-
+/* general layout */
 body {
+    font-size: 62.5%;
     display: flex;
-    padding: 15px;
+    padding: 20px;
 }
 .first-page, 
 .second-page {
-    width:40%;
+    width:48%;
     background-color: red;
     display: flex;
     flex-direction: column;
 }
 .middle {
-    width: 5%;
+    width: 4%;
     background-color: darkred;
 }
 
-/* small section first page */
+/* first-page section */
 .three-circles-container {
-    border: 1px solid blue;
+    display: flex;
+}
+.three-circles-container .two-thirds {
     display: flex;
     padding-left: 50px;
+    width:70%;
+    height: fit-content;
+}
+.three-circles-container .one-third {
+    width:30% ;
+    /* border-bottom: 7px solid rgb(116, 16, 16);   */
+    box-shadow: 0px 10px 0 rgb(116, 16, 16);  
 }
 .circle {
     height: 10px;
     width: 10px;
     border-radius: 50%;
-    margin: 5px;
+    margin: 5%;
 }
 .start-circle {
-    background-color: yellow;
+    background:linear-gradient(to right, rgb(255, 8, 0),rgb(57, 14, 14));
 }
 .middle-circle {
-    background-color: rgb(219, 98, 98);
+    background:linear-gradient(to right, rgb(255, 255, 18),rgb(107, 92, 6));
 }
 .end-circle {
-    background-color: green;
+    background:linear-gradient(to right, rgb(50, 255, 18),rgb(6, 107, 19));
 }
 
 .big-circle-container {
     width: 70%;
     position: relative;
     height: 50px;
-    border: 1px solid yellow;
-    border-bottom-right-radius: 180px;
-    /* try other borders here!!!!! */
+    border-bottom-right-radius: 100px;
+    border-bottom: 7px solid rgb(116, 16, 16);
+    border-right: 7px solid rgb(116, 16, 16);
+    box-shadow: 1px 0px 0 rgb(116, 16, 16);  
 }
-
 .big-circle {
     height: 50px;
     width: 50px;
-    background-color: aqua;
+    background:linear-gradient(to right, rgb(18, 212, 255),rgb(6, 77, 107));
     border-radius: 50%;
     position: absolute;
     top: -10px;
-    border: 7px solid white;
+    border: 5px solid white;
 }
+
 .content-container {
     display: flex;
     flex-direction: column;
     border:1px solid pink
 }
-.screen {
+
+.screen-container {
+    border-radius: 0.5em;
+    background-color: rgb(201, 214, 216);
     width: 70%;
-    min-height: 100px;
+    margin: 0 auto;
+    padding: 15px 15px 0 15px;
+}
+.screen {
+    width: 100%;
+    max-height: 8em;
     margin: 0 auto;
     background-color: skyblue;
+    display: flex;
+    flex-direction: column;
+}
+input {
+    width: 100%;
+    background: skyblue;
+    border: 1px solid rgb(20, 170, 196);
+}
+
+img {
+    width: 50%;
+    height: 20em;
+    background-color: aqua;
+}
+.screen-button {
+    background-color: red;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
 }
 
 .main-buttons {
