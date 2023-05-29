@@ -101,7 +101,7 @@ body {
 }
 .screen {
     width: 100%;
-    max-height: 8em;
+    max-height: 20em;
     margin: 0 auto;
     background-color: skyblue;
     display: flex;
@@ -115,7 +115,7 @@ input {
 
 img {
     width: 50%;
-    height: 20em;
+    height: 200px;
     background-color: aqua;
 }
 .screen-button {
