@@ -7,7 +7,8 @@
 body {
     font-size: 62.5%;
     display: flex;
-    padding: 5px 15%;
+    padding: 5em 17%;
+    background:linear-gradient(to right, rgb(5, 13, 55),rgb(57, 14, 14));
 }
 .first-page, 
 .second-page {
@@ -15,7 +16,7 @@ body {
     background-color: red;
     display: flex;
     flex-direction: column;
-    box-shadow: 0px 10px 5px rgb(167, 14, 14);
+    box-shadow: 0px -1px 36px rgb(167, 14, 14);
 }
 .first-page {
     background-color: rgb(182, 14, 14);
@@ -35,8 +36,8 @@ body {
 .three-circles-container {
     display: flex;
     background-color: red;
-    border-top-left-radius: 5px;
-
+    border-top-left-radius: 15px;
+    border-top-right-radius: 7px;
 }
 .three-circles-container .two-thirds {
     display: flex;
@@ -48,6 +49,8 @@ body {
     width:30% ;
     /* border-bottom: 7px solid rgb(116, 16, 16);   */
     box-shadow: 0px 10px 0 rgb(116, 16, 16);  
+    border-top-right-radius: 15px;
+
 }
 .circle {
     height: 10px;
@@ -89,7 +92,11 @@ body {
 .content-container {
     display: flex;
     flex-direction: column;
-    border:1px solid pink
+        flex-direction: column;
+    border-left: 12px solid #95172d;
+    border-bottom: 12px solid #95172d;
+    border-left-style: double;
+    border-bottom-style: double;
 }
 
 .screen-container {
@@ -112,11 +119,12 @@ input {
     background: skyblue;
     border: 1px solid rgb(20, 170, 196);
 }
-
+.image-description {
+    display: flex;
+    min-height: 170px;
+}
 img {
-    width: 50%;
-    height: 200px;
-    background-color: aqua;
+    width: 100%;
 }
 .screen-button {
     background-color: red;
