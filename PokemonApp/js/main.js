@@ -7,7 +7,7 @@ function getPokemon() {
         .then(res => res.json()) 
         .then( data => {
             console.log(data)
-            
+            document.querySelector('img').src = data.sprites.front_default
         }
 
     )
