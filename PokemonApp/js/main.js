@@ -7,7 +7,8 @@ function getPokemon() {
         .then(res => res.json()) 
         .then( data => {
             console.log(data)
-            document.querySelector('img').src = data.sprites.front_default
+            document.querySelector('img').src = data.sprites.front_default;
+            document.querySelector('p').innerText = `${input}'s ability is ${data.abilities[0].ability.name}`
         }
 
     )
