@@ -78,6 +78,7 @@ body {
     border-right: 7px solid rgb(116, 16, 16);
     box-shadow: 1px 0px 0 rgb(116, 16, 16);  
 }
+
 .big-circle {
     height: 50px;
     width: 50px;
@@ -108,11 +109,14 @@ body {
 }
 .screen {
     width: 100%;
-    max-height: 20em;
+    min-height: 200px;
     margin: 0 auto;
-    background-color: skyblue;
+    background-color: rgb(185, 215, 226);
     display: flex;
     flex-direction: column;
+    border-style: groove;
+    border-width: 7px;
+    border-color: #8ab6d03b;
 }
 input {
     width: 100%;
@@ -122,6 +126,13 @@ input {
 .image-description {
     display: flex;
     min-height: 170px;
+    color: rgb(22, 25, 187);
+    font-size: 1.2rem;
+
+}
+
+.image-description p {
+    padding: 18% 0;
 }
 img {
     width: 100%;
